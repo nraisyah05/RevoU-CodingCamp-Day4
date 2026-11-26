@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense &amp; Budget Visualizer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Expense &amp; Budget Visualizer</h1>
+
+    <p class="total-label">Total: <span id="total-display">$0.00</span></p>
+
+    <!-- Form error messages -->
+    <div id="form-errors" aria-live="polite"></div>
+
+    <!-- Add Expense Form -->
+    <form id="expense-form" novalidate>
+      <div class="form-group">
+        <label for="item-name">Item Name</label>
+        <input
+          type="text"
+          id="item-name"
+          name="name"
+          placeholder="e.g. Lunch"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="item-amount">Amount ($)</label>
+        <input
+          type="number"
+          id="item-amount"
+          name="amount"
+          placeholder="0.00"
+          step="0.01"
+          min="0"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="item-category">Category</label>
+        <select id="item-category" name="category">
+          <option value="">— Select category —</option>
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Fun">Fun</option>
+        </select>
+      </div>
+
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Expense List -->
+    <section id="expense-list-section">
+      <h2>Expenses</h2>
+      <ul id="expense-list"></ul>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
